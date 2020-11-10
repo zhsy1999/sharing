@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.sharing.dao.IUserislikeDao">
+    <resultMap id="BaseResultMap" type="com.example.sharing.entity.Userislike">
+    </resultMap>
+
+    <insert id="addLike" parameterType="com.example.sharing.entity.Userislike">
+        insert into userislike (vdoId, userNo, isLike)
+        values (#{vdoId}, #{userNo}, #{isLike})
+    </insert>
+
+    <select id="getIsLike" resultMap="BaseResultMap">
+        SELECT * from userislike where userNo=#{userNo} and vdoId=#{vdoId} limit 0,1
+    </select>
+
+    <delete id="deleteLike">
+        DELETE FROM userislike WHERE userNo=#{userNo} and vdoId=#{vdoId}
+    </delete>
+
+</mapper>

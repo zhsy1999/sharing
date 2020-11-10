@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.sharing.dao.IVideosDao">
+    <resultMap id="BaseResultMap" type="com.example.sharing.entity.Videos">
+    </resultMap>
+    <select id="getMadeByUserNo" resultMap="BaseResultMap" parameterType="com.example.sharing.entity.Videos">
+        SELECT videos.vdoId as vdoId, vdoNa, users.userNo as userNo, vdoPath, vdoImg, vdoRemark, likeNum,  watchNum, videos.createTime as createTime, isPublic, username, userImg from
+          videos LEFT JOIN users ON videos.userNo=users.userNo
+          WHERE videos.userNo=#{userNo}
+    </select>
+
+    <select id="search" resultMap="BaseResultMap" parameterType="com.example.sharing.entity.Videos">
+        SELECT videos.vdoId as vdoId, vdoNa, users.userNo as userNo, vdoPath, vdoImg, vdoRemark, likeNum,  watchNum, videos.createTime as createTime, isPublic, username, userImg from
+          videos LEFT JOIN users ON videos.userNo=users.userNo
+          WHERE vdoNa=#{searchWords}
+    </select>
+
+    <select id="getPartVideos" resultMap="BaseResultMap" parameterType="com.example.sharing.entity.Videos">
+        SELECT videos.vdoId as vdoId, vdoNa, users.userNo as userNo, vdoPath, vdoImg, vdoRemark, likeNum,  watchNum, videos.createTime as createTime, isPublic, username, userImg from
+          videos LEFT JOIN users ON videos.userNo=users.userNo
+    </select>
+
+    <select id="getByVdoID" resultMap="BaseResultMap" parameterType="com.example.sharing.entity.Videos">
+        select * from videos where vdoId=#{vdoId}
+    </select>
+
+    <update id="commentNumSub1" parameterType="com.example.sharing.entity.Videos">
+        UPDATE videos set commentNum = commentNum-1 where vdoId=#{vdoId}
+    </update>
+    <update id="commentNumAdd1" parameterType="com.example.sharing.entity.Videos">
+        UPDATE videos set commentNum = commentNum+1 where vdoId=#{vdoId}
+    </update>
+    <update id="likeNumAdd1" parameterType="com.example.sharing.entity.Videos">
+        UPDATE videos set likeNum = likeNum+1 where vdoId=#{vdoId}
+    </update>
+    <insert id="addVdo" useGeneratedKeys="true" keyProperty="vdoId" parameterType="com.example.sharing.entity.Videos">
+        insert into videos (vdoNa, userNo, vdoPath, vdoImg, vdoRemark, likeNum, commentNum, watchNum, isPublic)
+        values (#{vdoNa}, #{userNo}, #{vdoPath}, #{vdoImg}, #{vdoRemark}, #{likeNum}, #{commentNum}, #{watchNum}, #{isPublic})
+    </insert>
+
+    <delete id="deleteVdo" parameterType="com.example.sharing.entity.Videos">
+        DELETE FROM videos WHERE vdoId=#{vdoId}
+    </delete>
+
+</mapper>

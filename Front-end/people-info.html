@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>用户信息</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, width=device-width">
+    <meta name="description" content="Bitter Mobile Template">
+    <meta name="keywords" content="bootstrap, mobile template, cordova, phonegap, mobile, html, responsive" />
+	<script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+</head>
+
+<body>
+
+    <!-- Page loading -->
+    <div class="loading">
+        <div class="spinner-grow"></div>
+    </div>
+    <!-- * Page loading -->
+
+    <!-- App Header -->
+    <div class="appHeader">
+        <div class="pageTitle">我的信息</div>
+    </div>
+    <!-- * App Header -->
+
+    <!-- App Capsule -->
+    <div id="appCapsule">
+
+        <div class="appContent">
+
+			<div class="user">
+				<div class="row mt-1">
+					<div>
+						<img src="assets/img/sample/avatar.jpg" alt="avatar" class="imageBlock circle large">
+					</div>
+					<div class="ml-1 mt-1">
+						<h5><strong> 东哥 </strong></h5>
+						<div class="text-muted">
+							<span class="iconify" data-icon="ion:location-sharp" data-inline="false"></span>
+							杭州
+						</div>
+					</div>
+				</div>
+				
+				<div class="divider mt-2 mb-1"></div>
+				
+				<div class="row">
+					<div class="col text-center">
+						<strong><div class="text-muted">发布</div></strong>
+						<h5>518</h5>
+					</div>
+					<div class="col text-center">
+						<strong><div class="text-muted">关注</div></strong>
+						<h5>36</h5>
+					</div>
+					<div class="col text-center">
+						<strong><div class="text-muted">粉丝</div></strong>
+						<h5>56k</h5>
+					</div>
+				</div>
+				
+				<div class="divider m-1"></div>
+				
+					<!-- post buttons -->
+					<div class="row m-1">
+						<div class="col-6">
+							<a href="javascript:;" class="btn btn-primary btn-block">
+								<i class="icon ion-md-add"></i> 关注
+							</a>
+						</div>
+						<div class="col-6">
+							<a href="javascript:;" class="btn btn-danger btn-block">
+								<i class="icon ion-ios-mail"></i> 私信
+							</a>
+						</div>
+					</div>
+					<!-- * post buttons -->
+				
+				<div class="divider m-1"></div>
+				
+			</div>
+			
+            <div class="sectionTitle mb-1 mt-2">
+                <div class="text-muted">最近</div>
+				<ul class="nav nav-tabs size2 iconed" id="myTab2" role="tablist">
+				    <li class="nav-item">
+				        <a class="nav-link active" id="home-tab2" data-toggle="tab" href="#home1" role="tab">
+				            <i class="icon ion-ios-home"></i>
+				            发布
+				        </a>
+				    </li>
+				    <li class="nav-item">
+				        <a class="nav-link" id="profile-tab2" data-toggle="tab" href="#profile1" role="tab">
+				            <i class="icon ion-ios-person"></i>
+				            喜欢
+				        </a>
+				    </li>
+				</ul>
+            </div>
+
+            <!-- post list -->
+            <div id='postlist' class="row">
+                <!-- item -->
+                <div class="col-6">
+                    <a href="blog-post.html" class="postItem">
+                        <div class="imageWrapper">
+                            <img src="assets/img/sample/photo11.jpg" alt="image" class="image" style="width: 190px;height: 170px;">
+                        </div>
+                        <h2 class="title">天上没有月亮，人间灯火如豆</h2>
+                    </a>
+                </div>
+                <!-- * item -->
+                <!-- item -->
+                <div class="col-6">
+                    <a href="blog-post.html" class="postItem">
+                        <div class="imageWrapper">
+                            <img src="assets/img/sample/photo8.jpg" alt="image" class="image">
+                        </div>
+                        <h2 class="title">出来混，总是要胖的！</h2>
+                    </a>
+                </div>
+                <!-- * item -->
+                <!-- item -->
+                <div class="col-6">
+                    <a href="blog-post.html" class="postItem">
+                        <div class="imageWrapper">
+                            <img src="assets/img/sample/photo3.jpg" alt="image" class="image">
+                        </div>
+                        <h2 class="title">好吃的要吃进肚子里，可爱的人要放心里!</h2>
+                    </a>
+                </div>
+                <!-- * item -->
+                <!-- item -->
+                <div class="col-6">
+                    <a href="blog-post.html" class="postItem">
+                        <div class="imageWrapper">
+                            <img src="assets/img/sample/photo13.jpg" alt="image" class="image" style="width: 190px;height: 170px;">
+                        </div>
+                        <h2 class="title">打卡中国美院！</h2>
+                    </a>
+                </div>
+                <!-- * item -->
+            </div>
+            <!-- * post list -->
+
+    </div>
+    <!-- * appCapsule -->
+
+<!-- App Bottom Menu -->
+    <div class="appBottomMenu">
+        <div class="item">
+            <a href="homepage.html">
+                <p>
+                    <i class="icon ion-ios-water"></i>
+                    <span>首页</span>
+                </p>
+            </a>
+        </div>
+       
+       
+        <div class="item">
+            <a href="social-home.html">
+                <p>
+                    <i class="icon ion-ios-apps"></i>
+                    <span>动态</span>
+                </p>
+            </a>
+        </div>
+        <div class="item active">
+            <a href="people-info.html">
+                <p>
+                    <i class="icon ion-ios-person"></i>
+                    <span>我的</span>
+                </p>
+            </a>
+        </div>
+    </div>
+    <!-- * App Bottom Menu -->
+
+    
+    <!-- Sidebar Menu -->
+    <div class="sidebarWrapper">
+        <div class="overlay toggleSidebar"></div>
+        <nav class="sidebar">
+            <div class="profilebox">
+                <img src="assets/img/sample/avatar.jpg" alt="avatar" class="avatar">
+                <h2 class="title">醒了很久还是很感动</h2>
+                <h5 class="lead">
+                    <i class="icon ion-ios-pin mr-1"></i>
+                    浙江省杭州市
+                </h5>
+                <div class="button">
+                    <a href="#">
+                        <i class="icon ion-ios-settings"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="sidebarGroup">
+                <ul class="sidebarMenu">
+                    <li>
+                        <a href="social-home.html">
+                            <i class="icon ion-ios-people"></i>
+                            动态
+                        </a>
+                    </li>
+                    <li>
+                        <a href="social-chat.html">
+                            <i class="icon ion-ios-chatboxes"></i>
+                            消息
+                        </a>
+                    </li>
+                    <li>
+                        <a href="activitiy-list.html">
+                            <i class="icon ion-ios-apps"></i>
+                            活动
+                        </a>
+                    </li>
+                    <li>
+                        <a href="people-info.html">
+                            <i class="icon ion-ios-book"></i>
+                            信息
+                        </a>
+                    </li>
+                    <li>
+                        <a href="page-login.html">
+                            <i class="icon ion-ios-lock"></i>
+                            登出
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="sidebarGroup">
+                <ul class="sidebarMenu">
+                    <li class="title">在线</li>
+                    <li>
+                        <a href="social-chat.html">
+                            <img src="assets/img/sample/avatar2.jpg" alt="avatar" class="avatar">
+                            胖大海
+                        </a>
+                    </li>
+                    <li>
+                        <a href="social-chat.html">
+                            <img src="assets/img/sample/avatar3.jpg" alt="avatar" class="avatar">
+                            佛山菩提
+                            <span class="badge badge-primary">2</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="social-chat.html">
+                            <img src="assets/img/sample/avatar4.jpg" alt="avatar" class="avatar">
+                            刘小佳
+                        </a>
+                    </li>
+                    <li>
+                        <a href="social-chat.html">
+                            <img src="assets/img/sample/avatar5.jpg" alt="avatar" class="avatar">
+                            张铁柱
+                        </a>
+                    </li>
+                    <li>
+                        <a href="social-chat.html">
+                            <img src="assets/img/sample/avatar6.jpg" alt="avatar" class="avatar">
+                            方言小李
+                        </a>
+                    </li>
+                </ul>
+            </div>
+    
+        </nav>
+    </div>
+    <!-- * Sidebar Menu -->
+
+    <!-- ///////////// Js Files ////////////////////  -->
+    <!-- Jquery -->
+    <script src="assets/js/lib/jquery-3.4.1.min.js"></script>
+    <!-- Bootstrap-->
+    <script src="assets/js/lib/popper.min.js"></script>
+    <script src="assets/js/lib/bootstrap.min.js"></script>
+    <!-- Owl Carousel -->
+    <script src="assets/js/plugins/owl.carousel.min.js"></script>
+    <!-- Main Js File -->
+    <script src="assets/js/app.js"></script>
+
+
+
+</body>
+
+<script>
+	window.onload=function(){
+	var commicflag=localStorage.getItem("commic").toString();
+	
+	let container = document.createElement('div');
+	container.className = "col-6 mt-2";
+	
+	let a_2 = document.createElement('a');
+	a_2.className='postItem';
+	
+	let div_3 = document.createElement('div');
+	div_3.className = 'imagaWrapper';
+	
+	let image_4=document.createElement('img');
+	image_4.src='assets/img/sample/product7.jpg';
+	image_4.alt='img';
+	image_4.className='image';
+	image_4.style='width: 190px;height: 170px';
+	
+	let div_4 = document.createElement('div');
+	div_4.className='class';
+	div_4.textContent='今天天气真好';
+	// div_4.textContent.fontSize='60px';
+	
+	div_3.appendChild(image_4)
+	div_3.appendChild(div_4);
+	a_2.appendChild(div_3);
+	container.appendChild(a_2);
+	
+	let postlist = document.getElementById('postlist');
+	postlist.appendChild(container);	
+	}
+	
+</script>
+
+</html> 

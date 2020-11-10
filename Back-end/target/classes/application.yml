@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/mysqlfx?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8&useSSL=false      #mysql不是数据库名
+    username: root
+    password: 123456zz
+  servlet:
+    multipart:
+      max-file-size: 1024MB
+      max-request-size: 1024MB
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.example.sharing.entity
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+logging:
+  path: E:/sharing/
+  #path: /var/
+
+server:
+  port: 8989

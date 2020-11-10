@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.sharing.dao.ICommentsDao">
+    <resultMap id="BaseResultMap" type="com.example.sharing.entity.Comments">
+    </resultMap>
+
+    <select id="viewComment" resultMap="BaseResultMap" parameterType="com.example.sharing.entity.Comments">
+        SELECT cmtId, vdoId, users.userNo as userNo, users.username as username, users.userImg as userImg, content, comments.createTime as createTime from
+		  comments LEFT JOIN users ON comments.userNo=users.userNo
+		  WHERE vdoId = #{vdoId}
+    </select>
+
+    <select id="getCom" resultMap="BaseResultMap" parameterType="com.example.sharing.entity.Comments">
+        SELECT cmtId, vdoId, users.userNo as userNo, users.username as username, users.userImg as userImg, content, comments.createTime as createTime from
+		  comments LEFT JOIN users ON comments.userNo=users.userNo
+		  WHERE cmtId = #{cmtId} LIMIT 0, 1
+    </select>
+
+    <delete id="deleteCom" parameterType="com.example.sharing.entity.Comments">
+        DELETE FROM comments WHERE cmtId=#{cmtId}
+    </delete>
+
+    <insert id="addComment" useGeneratedKeys="true" keyProperty="cmtId" parameterType="com.example.sharing.entity.Comments">
+        insert into comments (vdoId, userNo, content)
+        values (#{vdoId},#{userNo},#{content})
+    </insert>
+
+</mapper>

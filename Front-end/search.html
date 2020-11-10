@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+	
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bitter Mobile Template</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, width=device-width">
+    <meta name="description" content="Bitter Mobile Template">
+    <meta name="keywords" content="bootstrap, mobile template, cordova, phonegap, mobile, html, responsive" />
+</head>
+
+
+<body>
+
+    <!-- Page loading -->
+    <div class="loading">
+        <div class="spinner-grow"></div>
+    </div>
+    <!-- * Page loading -->
+
+    <!-- App Header -->
+    <div class="appHeader">
+		
+			<div class="left">
+			    <a href="javascript:;" class="mb-0 icon">
+			        <i class="icon ion-ios-search"></i>
+			    </a>
+			</div>
+			<div class="mui-title mui-input-row mui-search">
+			<input type="text" class="form-control" style="width: 270px;background-color:transparent;" id="searchInput1" placeholder="请输入......">
+		    </div>
+		<div class="right"><!-- border:1px solid red; -->
+		    <button type="button" onclick="search1()" style="background-color: white; height: 50px; width: 55px; border-width:0px; font-size: 18px;">查找</button>
+		</div>
+
+	</div>
+
+    <div id="appCapsule">
+
+        <div class="appContent" id="container">
+
+            <!-- post -->
+<!--            <div class="photoPost mt-1" id = "pp1">
+                <header>
+                    <div class="user">
+                        <a href="people-info.html">
+                            <img src="img/sample/avatar6.jpg" alt="avatar" class="avatar">
+                            <span style="color: #000000; strong">M方言小李</span>
+                        </a>
+                    </div>
+                    <div class="right">
+                        <div class="lead">5分钟前</div>
+                    </div>
+                </header>
+                <div class="image">
+                    <img src="img/sample/photo4.jpg" alt="photo" class="img-fluid">
+                </div>
+                <footer class="row">
+                    <div class="col-8">
+                        <button class="btn btn-sm mr-2"><i class="icon ion-ios-heart text-danger"></i>35</button>
+                        <button class="btn btn-sm"><i class="icon ion-ios-text text-primary"></i>210</button>
+                    </div>
+                    <div class="col-4 text-right">
+                        <button class="btn btn-sm mr-2"><i class="icon ion-ios-bookmark text-secondary"></i></button>
+                        <button class="btn btn-sm"><i class="icon ion-ios-share-alt text-secondary"></i></button>
+                    </div>
+                </footer>
+            </div> -->
+<!-- 			<div class="photoPost mt-1" id = "pp2">
+			    <header>
+			        <div class="user">
+			            <a href="people-info.html">
+			                <img src="img/sample/avatar6.jpg" alt="avatar" class="avatar">
+			                <strong>M方言小李</strong>
+			            </a>
+			        </div>
+			        <div class="right">
+			            <div class="lead">5分钟前</div>
+			        </div>
+			    </header>
+			    <div class="image">
+			        <img src="img/sample/photo4.jpg" alt="photo" class="img-fluid">
+			    </div>
+			    <footer class="row">
+			        <div class="col-8">
+			            <button class="btn btn-sm mr-2"><i class="icon ion-ios-heart text-danger"></i>35</button>
+			            <button class="btn btn-sm"><i class="icon ion-ios-text text-primary"></i>210</button>
+			        </div>
+			        <div class="col-4 text-right">
+			            <button class="btn btn-sm mr-2"><i class="icon ion-ios-bookmark text-secondary"></i></button>
+			            <button class="btn btn-sm"><i class="icon ion-ios-share-alt text-secondary"></i></button>
+			        </div>
+			    </footer>
+			</div> -->
+            <!-- post -->
+
+    <div class="appBottomMenu">
+        <div class="item">
+            <a href="homepage.html">
+                <p>
+                    <i class="icon ion-ios-water"></i>
+                    <span>首页</span>
+                </p>
+            </a>
+        </div>
+      
+        <div class="item active">
+			
+            <a href="social-home.html">
+                <p>
+                    <i class="icon ion-ios-apps"></i>
+                    <span>动态</span>
+                </p>
+            </a>
+        </div>
+		
+        <div class="item myself">
+            <a href="people-info.html">
+                <p>
+                    <i class="icon ion-ios-person"></i>
+                    <span>我的</span>
+                </p>
+            </a>
+        </div>
+    </div>
+
+        </div>
+
+    </div>
+    <!-- appCapsule -->
+
+    <!-- ///////////// Js Files ////////////////////  -->
+    <!-- Jquery -->
+    <script src="assets/js/lib/jquery-3.4.1.min.js"></script>
+    <!-- Bootstrap-->
+    <script src="assets/js/lib/popper.min.js"></script>
+    <script src="assets/js/lib/bootstrap.min.js"></script>
+    <!-- Owl Carousel -->
+    <script src="assets/js/plugins/owl.carousel.min.js"></script>
+    <!-- Main Js File -->
+    <script src="assets/js/app.js"></script>
+<!-- 	<script type="text/javascript">
+			// $('#searchInput')
+			let a1 = document.getElementById('searchInput');
+
+			a1.onkeydown = function(event) {
+				
+				    window.location.href("./video-play.html");
+				};
+			a1.onkeyup = function(event) {
+				
+				    window.location.href("./video-play.html");
+				};
+			a1.onkeypress = function(event) {
+				
+				    window.location.href("./video-play.html");
+				};
+	</script> -->
+	<script>
+         function search1(){
+			 //let photopost2 = document.getElementById('pp1');
+			  //photopost2.innerHTML = '';
+			 //let photopost3 = document.getElementById('pp2');
+			  //photopost3.innerHTML = '';
+			 let searchWords = document.getElementById('searchInput1').value;
+			 // console.log(searchWords);
+			 let vdoType = '0';
+			 let search2 = async (l1) => {
+			 let fetchUrl = 'http://3499f57q62.zicp.vip:80/videos/search';
+			 let fetchOption = {
+			   method: 'POST',
+			   headers: {
+			     'Accept': 'application/json',
+			 	 'Content-Type': 'application/x-www-form-urlencoded'
+			     // 'Content-Type': 'application/json',
+			   },
+			   body: `searchWords=${l1}`,
+			 			 	
+			 			 	
+			 };
+			 fetch(fetchUrl, fetchOption).then(promise => promise.json()).then(data => {
+			 	 console.log(data[0]);
+				putt(data[0]);
+			     
+			 });
+			 }
+			 function putt(a){
+				 let header1 = document.createElement('header');
+				 
+				 let div1_1 = document.createElement('div');
+				 div1_1.className = 'user';
+				 
+				 let a1_1 = document.createElement('a');
+				 a1_1.href = './people-info.html';
+				 
+				 let img1 = document.createElement('img');
+				 img1.src = "assets/img/sample/avatar3.jpg";
+				 img1.alt = 'avatar';
+				 img1.className = 'avatar';
+				 
+				 let span1 = document.createElement('span');
+				 span1.style.color = '#000000';
+				 span1.style = 'strong';
+				 span1.textContent = a.userNa;
+				 
+				 
+				 let div1_2 = document.createElement('div');
+				 div1_2.className = 'right lead';
+				 div1_2.textContent = a.createTime;
+				 
+				 let a2 = document.createElement('a');
+				 a2.href = 'video-play.html';
+				 
+				 let div2 = document.createElement('div');
+				 div2.className = 'image';
+				 // div2.id = 'tiaozhuan';
+				 // div2.onclick = "window.location='video-play.html';";
+				 // div2.onclick = 'alert('成功')';
+				 
+				 let img2 = document.createElement('img');
+				 img2.src = a.vdoImg;
+				 // img2.href = 'video-play.html';
+				 
+				 img2.alt = 'photo';
+				 img2.className = 'img-fluid';
+				 
+				 let footer1 = document.createElement('footer');
+				 footer1.className = 'mb-2';
+				 
+				 let div3_1 = document.createElement('div');
+				 div3_1.className = 'col-8 float-left';
+				 
+				 let button1 = document.createElement('button');
+				 button1.className="btn btn-sm mr-2";
+				 
+				 let span3_1 = document.createElement('span');
+				 span3_1.textContent = a.likeNum;
+				 
+				 let i1 = document.createElement('i');
+				 i1.className = "icon ion-ios-heart text-danger";
+				 
+				 let button2 = document.createElement('button');
+				 button2.className="btn btn-sm";
+				 // button2.textContent = a.dislikeNum;
+				 
+				 let span3_2 = document.createElement('span');
+				 span3_2.textContent = a.dislikeNum;
+				 
+				 let i2 = document.createElement('i');
+				 i2.className = "icon ion-ios-text text-primary";
+				 
+				 let div3_2 = document.createElement('div');
+				 div3_2.className = 'float-right';
+				 // col-4
+				 let button3 = document.createElement('button');
+				 button3.className="btn btn-sm mr-2";
+				 
+				 let i3 = document.createElement('i');
+				 i3.className = "icon ion-ios-bookmark text-secondary";
+				 
+				 let button4 = document.createElement('button');
+				 button4.className="btn btn-sm";
+				 
+				 let i4 = document.createElement('i');
+				 i4.className = "icon ion-ios-share-alt text-secondary";
+				 
+				 //数字放在哪数字放在哪数字放在哪数字放在哪数字放在哪
+				 let photopost1 = document.createElement('div');
+				 photopost1.className = 'photoPost mt-1';
+								  
+				 let container1 = document.getElementById('container');
+				 container1.appendChild(photopost1);
+				 
+				 photopost1.appendChild(header1);
+				 header1.appendChild(div1_1);
+				 div1_1.appendChild(a1_1);
+				 a1_1.appendChild(img1);
+				 a1_1.appendChild(span1);
+				 header1.appendChild(div1_2)
+				 
+				 photopost1.appendChild(a2);
+				 a2.appendChild(div2);
+				 div2.appendChild(img2);
+				 
+				 photopost1.appendChild(footer1);
+				 
+				 footer1.appendChild(div3_1);
+				 div3_1.appendChild(button1);
+				 button1.appendChild(i1);
+				 button1.appendChild(span3_1);
+				 div3_1.appendChild(button2);
+				 button2.appendChild(i2);
+				 button2.appendChild(span3_2);
+				 
+				 footer1.appendChild(div3_2);
+				 div3_2.appendChild(button3);
+				 button3.appendChild(i3);
+				 div3_2.appendChild(button4);
+				 button4.appendChild(i4);
+				 
+				 // $("#tiaozhuan").onclick = function(){
+					//  console.log("111");
+				 // }
+				 // let a11 = document.getElementById('tiaozhuan');
+				 // a11.onclick = function(){
+					//  console.log("111");
+				 // }
+				 
+				 
+				
+				 // console.log(a.createTime);
+				 // <div class="photoPost mt-1">
+				 //     <header>
+				 //         <div class="user">
+				 //             <a href="people-info.html">
+				 //                 <img src="assets/img/sample/avatar6.jpg" alt="avatar" class="avatar">
+				 //                 <span style="color: #000000; strong">M方言小李</span>
+				 //             </a>
+				 //         </div>
+				 //         <div class="right">
+				 //             <div class="lead">5分钟前</div>
+				 //         </div>
+				 //     </header>
+				 //     <div class="image">
+				 //         <img src="assets/img/sample/photo4.jpg" alt="photo" class="img-fluid">
+				 //     </div>
+				 //     <footer class="row">
+				 //         <div class="col-8">
+				 //             <button class="btn btn-sm mr-2"><i class="icon ion-ios-heart text-danger"></i>35</button>
+				 //             <button class="btn btn-sm"><i class="icon ion-ios-text text-primary"></i>210</button>
+				 //         </div>
+				 //         <div class="col-4 text-right">
+				 //             <button class="btn btn-sm mr-2"><i class="icon ion-ios-bookmark text-secondary"></i></button>
+				 //             <button class="btn btn-sm"><i class="icon ion-ios-share-alt text-secondary"></i></button>
+				 //         </div>
+				 //     </footer>
+				 // </div>
+			 }
+			 search2(searchWords, vdoType);  
+			   
+			 	  
+		 }
+	</script>
+
+
+</body>
+
+</html>

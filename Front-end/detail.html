@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bitter Mobile Template</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, width=device-width">
+    <meta name="description" content="Bitter Mobile Template">
+    <meta name="keywords" content="bootstrap, mobile template, cordova, phonegap, mobile, html, responsive" />
+</head>
+
+<body>
+
+<!-- #if 1 -->
+	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script>
+		var like_num = 0;
+		var comment_num = 0;
+		// 需要页面间传值
+		var nowUserNo = 3;
+		var nowVdoId = 1;
+		// 传json类型数据
+		var PostJSONToRear = function(url_suffix, raw_data, success_function, _dataType = "JSON") {
+			let jqxhr = $.ajax({
+				url:'http://3499f57q62.zicp.vip:80'+url_suffix,
+				//http://3499f57q62.zicp.vip:80
+				type:"POST",
+				data:JSON.stringify(raw_data), // 要使用json格式数据传输，使用JSON.stringify()函数转化
+				contentType:"application/json; charset=utf-8", // 报错Content type 'application/x-www-form-urlencoded;charset=UTF-8' not supported，需要更改格式
+				dataType: _dataType,
+				success: success_function,
+				error: function (xhr, status) {
+					console.log('失败: ' + xhr.status + ', 原因: ' + status);
+				},
+			});
+			return jqxhr;
+		}
+		// 传普通类型数据
+		var PostStringToRear = function(url_suffix, raw_data, success_function) {
+			// let jqxhr = $.post('http://127.0.0.1:8080'+url_suffix, raw_data, success_function).fail(function (xhr, status) {
+			// 		console.log('失败: ' + xhr.status + ', 原因: ' + status);
+			// 	});
+			let jqxhr = $.post('http://3499f57q62.zicp.vip:80'+url_suffix, raw_data, success_function).fail(function (xhr, status) {
+					console.log('失败: ' + xhr.status + ', 原因: ' + status);
+				});
+			return jqxhr;
+		}
+		// get
+		var GetFromRear = function(url_suffix, raw_data, success_function) {
+			let jqxhr = $.get('http://3499f57q62.zicp.vip:80'+url_suffix)
+			// let jqxhr = $.get('http://127.0.0.1:8080'+url_suffix)
+				.done(success_function).fail(function (xhr, status) {
+					console.log('失败: ' + xhr.status + ', 原因: ' + status);
+				});
+			return jqxhr;
+		}
+		// 接收视频
+		// function get_video() {
+		// 	let get_video_url_suffix = '/videos/getByVdoID';
+		// 	let get_video_data = {vdoId:nowVdoId};
+		// 	let get_video_success = function(data) {
+		// 		console.log('get_video 成功, 收到的数据: ' + JSON.stringify(data));
+		// 		$('#vdo-plaryer').attr("src", data['vdoPath']);
+		// 		$('#title_div').text(data['vdoNa']);
+		// 		$('#usermaker_div').children('a').children('img').attr("src", data['userImg']);
+		// 		$('#usermaker_div').children('a').children('strong').text(data['userNa']);
+		// 		$('#vdotime_div').children('div').text(data['createTime'].substring(0,10));
+		// 	}
+		// 	PostStringToRear(get_video_url_suffix, get_video_data, get_video_success);
+		// }
+		// 设置点赞状态
+		function set_like() {
+			let set_like_url_suffix = '/like/getIsLike';
+			let set_like_data = {
+				"userNo": nowUserNo,
+				"vdoId": nowVdoId,
+			};
+			let set_like_success = function(data) {
+				console.log('set_like 成功, 收到的数据: ' + JSON.stringify(data));
+				if(data==0) {
+					console.log(1);
+					$("#like_div").children("i").attr("class", "icon ion-ios-heart text-dark");
+					// $('#like_div').attr("onclick", "search()");
+					$('#like_div').attr("onclick", "add_like()");
+				} else {
+					console.log(2);
+					$("#like_div").children("i").attr("class", "icon ion-ios-heart text-danger");
+					// $('#like_div').attr("onclick", "search()");
+					$('#like_div').attr("onclick", "delete_like()");
+				}
+			}
+			PostJSONToRear(set_like_url_suffix, set_like_data, set_like_success);
+		}
+		// 设置点赞数
+		function get_like_num() {
+			let get_like_num_url_suffix = '/videos/getByVdoID';
+			let get_like_num_data = {"vdoId": nowVdoId};
+			let get_like_num_success = function(data) {
+				console.log('get_like 成功, 收到的数据: ' + JSON.stringify(data));
+				like_num = data["likeNum"];
+				$("#like_div").children("span").text(like_num);
+			};
+			PostStringToRear(get_like_num_url_suffix, get_like_num_data, get_like_num_success)
+		}
+		// 设置评论数及显示评论
+		function set_comment() {
+			let set_comment_url_suffix = '/comment/viewComment';
+			let set_comment_data = {'vdoId': nowVdoId};
+			let set_comment_success = function(data) {
+				console.log('set_comment 成功, 收到的数据: ' + JSON.stringify(data));
+				let html = '';
+				$.each(data,function(i,d){
+					html += `<div class="item">
+						<a href="people-info.html">
+							<div class="image">
+								<img src="` + d['userImg'] + `" alt="avatar" class="avatar">
+							</div>
+						</a>
+						<div class="content">
+							<strong>` + d['userNa'] + `</strong>
+							<div class="text">` + d['content'] + `</div>
+							<footer>` + d['createTime'].substring(0,10) + `</footer>
+						</div>
+					</div>`
+				});
+				comment_num = data.length;
+				$('.comments').children().append(html);
+				$("#comment_span").text(comment_num);
+			};
+			PostStringToRear(set_comment_url_suffix, set_comment_data, set_comment_success);
+		}
+		
+		window.onload = () => {
+			$(document).ready(function(){
+				// 显示点赞
+				// 设置点赞状态
+				set_like();
+				// 设置点赞数
+				get_like_num();
+				
+				// 显示评论
+				// 设置评论数及显示评论
+				set_comment();
+				
+				// 设置视频状态
+				//get_video();
+			});
+		};
+		
+		// 添加评论
+		function add_comment() {
+			// let add_comment_url_suffix = '/comment/addComment';
+			// let add_comment_data = {
+			// 		"userNo": nowUserNo,
+			// 		"vdoId": nowVdoId,
+			// 		"content": $('textarea').val()
+			// 	};
+			// let add_comment_success = function(d) {
+			// 	console.log('add_comment 成功, 收到的数据: ' + JSON.stringify(d));
+				// 在本地插入新评论，而不是刷新页面
+				let html = `<div class="item">
+						<a href="people-info.html">
+							<div class="image">
+								<img src="assets/img/sample/avatar6.jpg" alt="avatar" class="avatar">
+							</div>
+						</a>
+						<div class="content">
+							<strong>testUser1</strong>
+							<div class="text">滴滴滴滴</div>
+							<footer>2020-11-10</footer>
+						</div>
+					</div>`;
+				$('.comments').children().append(html);
+				comment_num += 1;
+				$("#comment_span").text(comment_num);
+				// let html = `<div class="item">
+				// 		<a href="people-info.html">
+				// 			<div class="image">
+				// 				<img src="` + d['userImg'] + `" alt="avatar" class="avatar">
+				// 			</div>
+				// 		</a>
+				// 		<div class="content">
+				// 			<strong>` + d['userNa'] + `</strong>
+				// 			<div class="text">` + d['content'] + `</div>
+				// 			<footer>` + d['createTime'].substring(0,10) + `</footer>
+				// 		</div>
+				// 	</div>`;
+				// $('.comments').children().append(html);
+				// comment_num += 1;
+				// $("#comment_span").text(comment_num);
+			// };
+			// location.reload(true);
+			// PostJSONToRear(add_comment_url_suffix, add_comment_data, add_comment_success);
+		};
+		// 添加喜欢
+		function add_like() {
+			let add_like_url_suffix = '/like/addLike';
+			let add_like_data = {
+					"userNo": nowUserNo,
+					"vdoId": nowVdoId,
+					"isLike": 1,
+				};
+			let add_like_success = function(data) {
+				console.log('add_like 成功, 收到的数据: ' + JSON.stringify(data));
+				$("#like_div").children("i").attr("class", "icon ion-ios-heart text-danger");
+				$('#like_div').attr("onclick", "delete_like();");
+				like_num += 1;
+				$("#like_div").children("span").text(like_num);
+			};
+			PostJSONToRear(add_like_url_suffix, add_like_data, add_like_success, "text");
+			// location.reload(true);
+		};
+		// 删除喜欢
+		function delete_like() {
+			let delete_like_url_suffix = '/like/deleteLike';
+			let delete_like_data = {
+					userNo: nowUserNo,
+					vdoId: nowVdoId,
+					isLike: 1,
+				};
+			let delete_like_success = function(data) {
+				console.log('delete_like 成功, 收到的数据: ' + JSON.stringify(data));
+				$("#like_div").children("i").attr("class", "icon ion-ios-heart text-dark");
+				$('#like_div').attr("onclick", "add_like();");
+				like_num -= 1;
+				$("#like_div").children("span").text(like_num);
+			};
+			PostJSONToRear(delete_like_url_suffix, delete_like_data, delete_like_success, "text");
+			// location.reload(true);
+		};
+		// 测试
+		function test_hello() {
+			let test_hello_url_suffix = '/videos/hello';
+			let test_hello_success = function(data) {
+				console.log('test_hello 成功, 收到的数据: ' + JSON.stringify(data));
+			};
+			GetFromRear(test_hello_url_suffix,test_hello_success);
+		};
+		// 搜索测试
+		function search() {
+				// 传普通类型数据
+				let search_url_suffix = '/videos/search';
+				let search_data = {
+						searchWords : "1",
+						vdoType : "0"
+					};
+				let search_success = function(data) {
+					console.log('成功, 收到的数据: ' + JSON.stringify(data));
+				};
+				PostStringToRear(search_url_suffix, search_data, search_success);
+		};
+		// 添加视频测试
+		function add_video() {
+			let add_video_url_suffix = '/videos/addVdo';
+			let add_video_data = {
+				vdoNa : "I'm testVdo1",
+				vdoRemark : "Am I wrong?",
+				userNo : nowUserNo,
+				vdoPath : "nonono",
+				vdoImg : "nonono",
+				vdoType : 0,
+				isPublic : 1,
+				videoLabels : [
+					{labelId: 1},
+					{labelId: 2},
+					{labelId: 3}
+				]
+			};
+			let add_video_success = function() {
+				console.log('add_video 成功');
+			};
+			PostJSONToRear(add_video_url_suffix, add_video_data, add_video_success, "text");
+		}
+	</script>
+<!-- #endif -->
+
+<body>
+
+    <!-- Page loading -->
+    <div class="loading">
+        <div class="spinner-grow"></div>
+    </div>
+    <!-- * Page loading -->
+
+    <!-- App Header -->
+    <div class="appHeader">
+        <div class="left">
+            <a href="#" class="icon goBack">
+                <i class="icon ion-ios-arrow-back"></i>
+            </a>
+        </div>
+        <div class="pageTitle" id="title_div">详情</div>
+        <div class="right">
+            <label for="searchInput" class="mb-0 icon toggleSearchbox">
+                <i class="icon ion-ios-search"></i>
+            </label>
+        </div>
+    </div>
+    <!-- searchBox -->
+    <div class="searchBox">
+        <form>
+            <span class="inputIcon">
+                <i class="icon ion-ios-search"></i>
+            </span>
+            <input type="text" class="form-control" id="searchInput" placeholder="请输入......">
+            <a href="javascript:;" class="toggleSearchbox closeButton">
+                <i class="icon ion-ios-close-circle"></i>
+            </a>
+        </form>
+    </div>
+    <!-- * searchBox -->
+    <!-- * App Header -->
+
+    <!-- App Capsule -->
+    <div id="appCapsule">
+
+        <div class="appContent">
+
+            <!-- post -->
+            <div class="photoPost mt-1">
+                <header>
+                    <div class="user" id="usermaker_div">
+                        <a href="people-info.html">
+                            <img src="assets/img/sample/avatar7.jpg" alt="avatar" class="avatar">
+                            <strong>tsetUser2</strong>
+                        </a>
+                    </div>
+                    <div class="right" id="vdotime_div">
+                        <div class="lead">5分钟前</div>
+                    </div>
+                </header>
+                <div class="embed-responsive">
+					 <!-- embed-responsive-16by9 -->
+					<!-- <video controls autoplay src="http://47.95.220.161/img/vdos/%e5%a5%b3%e4%ba%ba%e7%ac%ac%e5%85%ad%e6%84%9f.mp4" id='vdo-plaryer'>
+					    您的浏览器不支持 video 标签。
+					</video> -->
+                    <img src="assets/img/sample/photo2.jpg" alt="photo" class="img-fluid">
+                </div>
+                <footer class="row">
+                    <div class="col-8">
+                        <button class="btn btn-sm mr-2" id="like_div" onclick="add_like()">
+							<i class="icon ion-ios-heart text-danger"></i>
+							<span>35</span>
+						</button>
+                        <button class="btn btn-sm">
+							<i class="icon ion-ios-text text-primary"></i>
+							<span id="comment_span">210</span>
+						</button>
+                    </div>
+                    <div class="col-4 text-right">
+                        <button class="btn btn-sm mr-2"><i class="icon ion-ios-bookmark text-secondary"></i></button>
+                        <button class="btn btn-sm"><i class="icon ion-ios-share-alt text-secondary"></i></button>
+                    </div>
+                </footer>
+            </div>
+            <!-- post -->
+
+            <!-- comments -->
+            <div class="comments">
+				<div></div>
+            </div>
+            <!-- * comments -->
+
+            <div class="divider mt-3 mb-3"></div>
+
+            <!-- form -->
+            <form>
+                <div class="form-group">
+                    <textarea class="form-control" rows="4" placeholder="发表我的观点..."></textarea>
+                </div>
+                <button type="button" class="btn btn-primary btn-large btn-block" onclick="add_comment();">
+                    评论
+                </button>
+            </form>
+            <!-- * form -->
+
+        </div>
+
+    </div>
+    <!-- appCapsule -->
+
+    <!-- ///////////// Js Files ////////////////////  -->
+    <!-- Jquery -->
+    <!-- Jquery -->
+    <script src="assets/js/lib/jquery-3.4.1.min.js"></script>
+    <!-- Bootstrap-->
+    <script src="assets/js/lib/popper.min.js"></script>
+    <script src="assets/js/lib/bootstrap.min.js"></script>
+    <!-- Owl Carousel -->
+    <script src="assets/js/plugins/owl.carousel.min.js"></script>
+    <!-- Main Js File -->
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>

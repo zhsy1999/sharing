@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bitter Mobile Template</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, width=device-width">
+    <meta name="description" content="Bitter Mobile Template">
+    <meta name="keywords" content="bootstrap, mobile template, cordova, phonegap, mobile, html, responsive" />
+</head>
+
+<body>
+
+    <!-- Page loading -->
+    <div class="loading">
+        <div class="spinner-grow"></div>
+    </div>
+    <!-- * Page loading -->
+
+    <!-- App Header -->
+    <div class="appHeader">
+        <div class="left">
+            <a href="#" class="icon goBack">
+                <i class="icon ion-ios-arrow-back"></i>
+            </a>
+        </div>
+        <div class="pageTitle">请友好评论</div>
+        <div class="right">
+            <label for="searchInput" class="mb-0 icon toggleSearchbox">
+                <i class="icon ion-ios-search"></i>
+            </label>
+        </div>
+    </div>
+    <!-- searchBox -->
+    <div class="searchBox">
+        <form>
+            <span class="inputIcon">
+                <i class="icon ion-ios-search"></i>
+            </span>
+            <input type="text" class="form-control" id="searchInput" placeholder="请输入......">
+            <a href="javascript:;" class="toggleSearchbox closeButton">
+                <i class="icon ion-ios-close-circle"></i>
+            </a>
+        </form>
+    </div>
+    <!-- * searchBox -->
+    <!-- * App Header -->
+
+    <!-- App Capsule -->
+    <div id="appCapsule">
+
+        <div class="appContent" id="container">
+
+            <!-- post -->
+<!--            <div class="photoPost mt-1" >
+                <header>
+                    <div class="user">
+                        <a href="people-info.html">
+                            <img src="assets/img/sample/avatar6.jpg" alt="avatar" class="avatar">
+                            <strong>M方言小李</strong>
+                        </a>
+                    </div>
+                    <div class="right">
+                        <div class="lead">5分钟前</div>
+                    </div>
+                </header>
+                <div class="image">
+                    <img src="assets/img/sample/photo4.jpg" alt="photo" class="img-fluid">
+                </div>
+                <footer class="row">
+                    <div class="col-8">
+                        <button class="btn btn-sm mr-2"><i class="icon ion-ios-heart text-danger"></i>35</button>
+                        <button class="btn btn-sm"><i class="icon ion-ios-text text-primary"></i>210</button>
+                    </div>
+                    <div class="col-4 text-right">
+                        <button class="btn btn-sm mr-2"><i class="icon ion-ios-bookmark text-secondary"></i></button>
+                        <button class="btn btn-sm"><i class="icon ion-ios-share-alt text-secondary"></i></button>
+                    </div>
+                </footer>
+            </div>
+            <!-- post -->
+
+            <!-- comments -->
+            <!-- <div class="comments">
+                <div class="item">
+					<a href="people-info.html">
+						<div class="image">
+							<img src="assets/img/sample/avatar5.jpg" alt="avatar" class="avatar">
+						</div>
+					</a>
+                    <div class="content">
+                        <strong>胖将军</strong>
+                        <div class="text">
+                            作为地道的长沙人表示up的长沙话不过关
+                        </div>
+                        <footer>2020-4-19</footer>
+                    </div>
+                </div>
+                <div class="item">
+					<a href="people-info.html">
+						<div class="image">
+							<img src="assets/img/sample/avatar4.jpg" alt="avatar" class="avatar">
+						</div>
+					</a>
+                    <div class="content">
+                        <strong>诸葛大力</strong>
+                        <div class="text">
+                           淡黄的长裙，蓬松的头发.
+                        </div>
+                        <footer>2020-4-19</footer>
+                    </div>
+                </div>
+            </div> --> 
+            <!-- * comments -->
+
+            <!-- <div class="divider mt-3 mb-3"></div>
+ -->
+            <!-- form -->
+            <form id="comment">
+				<div class="divider mt-3 mb-3"></div>
+                <div class="form-group">
+                    <textarea class="form-control" rows="4" placeholder="发表我的观点..."></textarea>
+                </div>
+                <button type="button" class="btn btn-primary btn-large btn-block">
+                    评论
+                </button>
+            </form>
+            <!-- * form -->
+
+        </div>
+
+    </div>
+    <!-- appCapsule -->
+
+    <!-- ///////////// Js Files ////////////////////  -->
+    <!-- Jquery -->
+    <script src="assets/js/lib/jquery-3.4.1.min.js"></script>
+    <!-- Bootstrap-->
+    <script src="assets/js/lib/popper.min.js"></script>
+    <script src="assets/js/lib/bootstrap.min.js"></script>
+    <!-- Owl Carousel -->
+    <script src="assets/js/plugins/owl.carousel.min.js"></script>
+    <!-- Main Js File -->
+    <script src="assets/js/app.js"></script>
+	<script>
+		//let searchWords = document.getElementById('searchInput1').value;
+		// console.log(searchWords);
+		let searchWords = '1';
+		let vdoType = '0';
+		let search2 = async (l1, l2) => {
+		let fetchUrl = 'http://47.95.220.161:8080/videos/search';
+		let fetchOption = {
+		  method: 'POST',
+		  headers: {
+		    'Accept': 'application/json',
+			 'Content-Type': 'application/x-www-form-urlencoded'
+		    // 'Content-Type': 'application/json',
+		  },
+		  body: `searchWords=${l1}&vdoType=${l2}`,
+					 	
+					 	
+		};
+		fetch(fetchUrl, fetchOption).then(promise => promise.json()).then(data => {
+			 console.log(data[0]);
+						putt(data[0]);
+		    
+		});
+		}
+		function putt(a){
+						 let header1 = document.createElement('header');
+						 
+						 let div1_1 = document.createElement('div');
+						 div1_1.className = 'user';
+						 
+						 let a1_1 = document.createElement('a');
+						 a1_1.href = './people-info.html';
+						 
+						 let img1 = document.createElement('img');
+						 img1.src = a.userImg;
+						 img1.alt = 'avatar';
+						 img1.className = 'avatar';
+						 
+						 let span1 = document.createElement('span');
+						 span1.style.color = '#000000';
+						 span1.style = 'strong';
+						 span1.textContent = a.userNa;
+						 
+						 
+						 let div1_2 = document.createElement('div');
+						 div1_2.className = 'right lead';
+						 div1_2.textContent = a.createTime;
+						 
+						 let a2 = document.createElement('a');
+						 a2.href = 'video-play.html';
+						 
+						 let div2 = document.createElement('div');
+						 div2.className = 'image';
+						 // div2.id = 'tiaozhuan';
+						 // div2.onclick = "window.location='video-play.html';";
+						 // div2.onclick = 'alert('成功')';
+						 
+						 // let img2 = document.createElement('img');
+						 // img2.src = a.vdoImg;
+						 // img2.href = 'video-play.html';
+						 let video2 = document.createElement('video');
+						 video2.id="example_video";
+						 video2.className="video-js vjs-default-skin ";
+						 video2.controls poster=a.vdoImg;
+						 video2.src=a.vdoPath;
+						 
+						 
+						 // img2.alt = 'photo';
+						 // img2.className = 'img-fluid';
+						 
+						 let footer1 = document.createElement('footer');
+						 footer1.className = 'mb-2';
+						 
+						 let div3_1 = document.createElement('div');
+						 div3_1.className = 'col-8 float-left';
+						 
+						 let button1 = document.createElement('button');
+						 button1.className="btn btn-sm mr-2";
+						 
+						 let span3_1 = document.createElement('span');
+						 span3_1.textContent = a.likeNum;
+						 
+						 let i1 = document.createElement('i');
+						 i1.className = "icon ion-ios-heart text-danger";
+						 
+						 let button2 = document.createElement('button');
+						 button2.className="btn btn-sm";
+						 // button2.textContent = a.dislikeNum;
+						 
+						 let span3_2 = document.createElement('span');
+						 span3_2.textContent = a.dislikeNum;
+						 
+						 let i2 = document.createElement('i');
+						 i2.className = "icon ion-ios-text text-primary";
+						 
+						 let div3_2 = document.createElement('div');
+						 div3_2.className = 'float-right';
+						 // col-4
+						 let button3 = document.createElement('button');
+						 button3.className="btn btn-sm mr-2";
+						 
+						 let i3 = document.createElement('i');
+						 i3.className = "icon ion-ios-bookmark text-secondary";
+						 
+						 let button4 = document.createElement('button');
+						 button4.className="btn btn-sm";
+						 
+						 let i4 = document.createElement('i');
+						 i4.className = "icon ion-ios-share-alt text-secondary";
+						 
+						 //数字放在哪数字放在哪数字放在哪数字放在哪数字放在哪
+						 let photopost1 = document.createElement('div');
+						 photopost1.className = 'photoPost mt-1';
+										  
+						 let container1 = document.getElementById('container');
+						 let comment1 = document.getElementById('comment');
+						 container1.insertBefore(photopost1,comment1);
+						 // container1.appendChild(photopost1);
+						 
+						 photopost1.appendChild(header1);
+						 header1.appendChild(div1_1);
+						 div1_1.appendChild(a1_1);
+						 a1_1.appendChild(img1);
+						 a1_1.appendChild(span1);
+						 header1.appendChild(div1_2)
+						 
+						 photopost1.appendChild(a2);
+						 a2.appendChild(div2);
+						 div2.appendChild(video2);
+						 
+						 photopost1.appendChild(footer1);
+						 
+						 footer1.appendChild(div3_1);
+						 div3_1.appendChild(button1);
+						 button1.appendChild(i1);
+						 button1.appendChild(span3_1);
+						 div3_1.appendChild(button2);
+						 button2.appendChild(i2);
+						 button2.appendChild(span3_2);
+						 
+						 footer1.appendChild(div3_2);
+						 div3_2.appendChild(button3);
+						 button3.appendChild(i3);
+						 div3_2.appendChild(button4);
+						 button4.appendChild(i4);
+						 
+						 
+						 }
+		
+		// <video id="example_video" width="800" height="500" class="video-js vjs-default-skin " controls poster="">
+		//             <!-- RTMP直播源地址:香港卫视-->
+		// 	    <source src="rtmp://live.hkstv.hk.lxdns.com/live/hks1" type="rtmp/flv">
+		//         </video>
+		
+		// let vdoId = '1';
+		
+		// let search3 = async (l3) => {
+		// let fetchUrl = 'http://47.95.220.161:8080/comment/viewComment';
+		// let fetchOption = {
+		//   method: 'POST',
+		//   headers: {
+		//     'Accept': 'application/json',
+		// 	 'Content-Type': 'application/x-www-form-urlencoded'
+		//     // 'Content-Type': 'application/json',
+		//   },
+		//   body: `vdoId=${l3}`,
+					 	
+					 	
+		// };
+		// fetch(fetchUrl, fetchOption).then(promise => promise.json()).then(data => {
+		// 	 console.log(data[0]);
+		// 				// putt2(data[0]);
+		    
+		// });
+		// }
+		// <div class="comments">
+		//     <div class="item">
+		// 		<a href="people-info.html">
+		// 			<div class="image">
+		// 				<img src="assets/img/sample/avatar5.jpg" alt="avatar" class="avatar">
+		// 			</div>
+		// 		</a>
+		//         <div class="content">
+		//             <strong>胖将军</strong>
+		//             <div class="text">
+		//                 作为地道的长沙人表示up的长沙话不过关
+		//             </div>
+		//             <footer>2020-4-19</footer>
+		//         </div>
+		//     </div>
+		// function putt3(b){
+		// 	let comment_all = document.createElement('div');
+		// 	comment_all.className = 'comments';
+			
+		// 	let comment_photo = document.createElement('div');
+		// 	comment_photo.className = 'item';
+			
+		// 	let comment_a = document.createElement('a');
+		// 	comment_a.href = "people-info.html";
+			
+		// 	let comment_div = document.createElement('div');
+		// 	comment_div.className = 'image';
+			
+		// 	let comment_img = document.createElement('img');
+		// 	comment_img.src=b.userImg;
+		// 	comment_img.alt="avatar";
+		// 	comment_img.className="avatar";
+			
+		// 	let comment_right = document.createElement('div');
+		// 	comment_right.className = 'content';
+			
+		// 	let comment_span = document.createElement('span');
+		// 	comment_span.style.color = '#000000';
+		// 	comment_span.style = 'strong';
+		// 	comment_span.textContent = b.userNa;
+			
+		// 	let comment_text = document.createElement('div');
+		// 	comment_text.className = 'text';
+		// 	comment_text.textContent = b.content;
+			
+			
+			
+		// }
+		search2(searchWords,vdoType);
+		// search3(vdoId);  
+	</script>
+
+</body>
+
+</html>

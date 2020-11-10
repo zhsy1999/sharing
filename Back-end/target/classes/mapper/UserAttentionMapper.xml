@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.sharing.dao.IUserAttentionDao">
+    <resultMap id="BaseResultMap" type="com.example.sharing.entity.UserAttention">
+    </resultMap>
+
+    <insert id="addAttention" parameterType="com.example.sharing.entity.UserAttention">
+        insert into userattention(fanNo,starNo)
+        values (#{fanNo},#{starNo})
+    </insert>
+
+    <delete id="cancelAttention" parameterType="com.example.sharing.entity.UserAttention">
+        delete from userattention where fanNo=#{fanNo} and starNo=#{starNo}
+    </delete>
+
+    <select id="getUserAttentions" resultMap="BaseResultMap" parameterType="com.example.sharing.entity.UserAttention">
+        select * from userattention where fanNo=#{fanNo}
+    </select>
+
+    <select id="getUserFans" resultMap="BaseResultMap" parameterType="com.example.sharing.entity.UserAttention">
+        select * from userattention where starNo=#{starNo}
+    </select>
+</mapper>

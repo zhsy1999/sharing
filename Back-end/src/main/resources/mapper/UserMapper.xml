@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.sharing.dao.IUsersDao">
+    <resultMap id="BaseResultMap" type="com.example.sharing.entity.Users">
+    </resultMap>
+    <select id="users" resultMap="BaseResultMap" parameterType="com.example.sharing.entity.Users">
+        SELECT * from users where username=#{username} and password=#{password}
+    </select>
+    <insert id="signup" parameterType="com.example.sharing.entity.Users">
+        insert into users (username,password,userImg,phone,QQNum,WeChatNum,sex,attentionNum,fansNum)
+        values (#{username},#{password},#{userImg},#{phone},#{QQNum},#{WeChatNum},#{sex},#{attentionNum},#{fansNum})
+    </insert>
+    <select id="signin" resultMap="BaseResultMap" parameterType="com.example.sharing.entity.Users">
+        SELECT * from users where username=#{username} and password=#{password} limit 0,1
+    </select>
+
+    <select id="signinStatus" resultMap="BaseResultMap" parameterType="com.example.sharing.entity.Users">
+        SELECT * from users where phone=#{phone} limit 0,1
+    </select>
+
+    <update id="changePwd" parameterType="com.example.sharing.entity.Users">
+        UPDATE users set password=#{password} where username=#{username}
+    </update>
+
+    <select id="getByuserNo" resultMap="BaseResultMap" parameterType="com.example.sharing.entity.Users">
+        SELECT * from users where userNo=#{userNo} limit 0,1
+    </select>
+
+    <update id="edit" parameterType="com.example.sharing.entity.Users">
+        UPDATE users
+        set username=#{username},password=#{password},userImg=#{userImg},phone=#{phone},QQNum=#{QQNum},WeChatNum=#{WeChatNum},sex=#{sex},attentionNum=#{attentionNum},fansNum=#{fansNum}
+        where userNo=#{userNo}
+    </update>
+
+    <select id="GetAttentionsNumber" resultType="java.lang.String" parameterType="com.example.sharing.entity.Users">
+        SELECT attentionNum from users where userNo=#{userNo} limit 0,1
+    </select>
+
+    <select id="GetFansNumber" resultType="java.lang.String" parameterType="com.example.sharing.entity.Users">
+        SELECT fansNum from users where userNo=#{userNo} limit 0,1
+    </select>
+</mapper>

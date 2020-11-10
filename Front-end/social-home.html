@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bitter Mobile Template</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, width=device-width">
+    <meta name="description" content="Bitter Mobile Template">
+    <meta name="keywords" content="bootstrap, mobile template, cordova, phonegap, mobile, html, responsive" />
+</head>
+
+<body>
+     
+    <!-- Page loading -->
+    <div class="loading">
+        <div class="spinner-grow"></div>
+    </div>
+	
+    <!-- * Page loading -->
+
+    <!-- App Header -->
+    <div class="appHeader">
+        <div class="left">
+            <a href="javascript:;" class="icon goBack">
+                <i class="icon ion-ios-arrow-back"></i>
+            </a>
+        </div>
+        <div class="pageTitle">动态</div>
+        <div class="right">
+			<!-- onclick="gogo()" -->
+            <a href="search.html" class="mb-0 icon">
+                <i class="icon ion-ios-search"></i>
+            </a>
+        </div>
+    </div>
+    <!-- searchBox -->
+    <div class="searchBox">
+        <form>
+            <span class="inputIcon">
+                <i class="icon ion-ios-search"></i>
+            </span>
+            <input type="text" class="form-control" id="searchInput" placeholder="请输入...">
+            <a href="javascript:;" class="toggleSearchbox closeButton">
+                <i class="icon ion-ios-close-circle"></i>
+            </a>
+        </form>
+    </div>
+    <!-- * searchBox -->
+    <!-- * App Header -->
+
+    <!-- App Capsule -->
+	
+    <div id="appCapsule">
+
+        <div class="appContent">
+
+
+      
+            <div id = "post"  class= "row">
+			
+				<div class="photoPost">
+					<header  >
+						<div class="user">
+							<a href="social-profile.html">
+								<img src="assets/img/sample/avatar3.jpg" alt="avatar" class="avatar" >
+								<strong>胖将军</strong>
+							</a>
+						</div>
+						<div class="right">
+							<div class="lead">5分钟 href="detail.html"z前</div>
+						</div>
+					</header>
+					
+					<div class="image">
+						<a  href="detail.html">
+							<img src="assets/img/sample/photo8.jpg" id="image" alt="photo" class="img-fluid" style="width:50px;height:300px">
+						</a>
+					</div>
+					
+						<footer class="row">
+							<div class="col-8">
+								<button class="btn btn-sm mr-2"><i class="icon ion-ios-heart text-danger"></i>52</button>
+								<button class="btn btn-sm"  index="1"  @onclick="click(1)"><i class="icon ion-ios-text text-primary"></i>3</button>
+							</div>
+							<div class="col-4 text-right">
+								<button class="btn btn-sm mr-2"><i class="icon ion-ios-bookmark text-secondary"></i></button>
+								<button class="btn btn-sm"><i class="icon ion-ios-share-alt text-secondary"></i></button>
+							</div>
+						</footer>
+				
+				</div>
+			     
+				<!-- post -->
+				<div class="photoPost">
+					
+					<header>
+						<div class="user">
+							<a href="social-profile.html">
+								<img src="assets/img/sample/avatar.jpg" alt="avatar" class="avatar">
+								<strong>早知道就这样如梦一场</strong>
+							</a>
+						</div>
+						<div class="right">
+							<div class="lead">22分钟前</div>
+						</div>
+					</header>
+					
+					<div class="image">
+						<a href="social-post.html">
+							<img src="assets/img/sample/photo10.jpg" alt="photo" class="img-fluid" style="width:50px;height:300px">
+						</a>
+					</div>
+					
+					<footer class="row">
+						<div class="col-8">
+							<button class="btn btn-sm mr-2"><i class="icon ion-ios-heart text-danger"></i>1.2k</button>
+							<button class="btn btn-sm" index="2" @onclick="click(2)"><i class="icon ion-ios-text text-primary"></i>521</button>
+						</div>
+						<div class="col-4 text-right">
+							<button class="btn btn-sm mr-2"><i class="icon ion-ios-bookmark text-secondary"></i></button>
+							<button class="btn btn-sm"><i class="icon ion-ios-share-alt text-secondary"></i></button>
+						</div>
+					
+					</footer>
+				</div>
+				<!-- post 
+				
+				<!-- post -->
+				<div class="photoPost">
+				    
+					<header >
+				        <div class="user">
+				            <a href="social-profile.html">
+				                <img src="assets/img/sample/avatar4.jpg" alt="avatar" class="avatar">
+				                <strong>先行者</strong>
+				            </a>
+				        </div>
+				        <div class="right">
+				            <div class="lead">3天前</div>
+				        </div>
+				    </header>
+				   
+					<div class="image">
+				        <a href="social-post.html">
+				            <img src="assets/img/sample/photo13.jpg" alt="photo" class="img-fluid" style="width:50px;height:300px">
+				        </a>
+				    </div>
+				    
+					<footer class="row">
+				        <div class="col-8">
+				            <button class="btn btn-sm mr-2"><i class="icon ion-ios-heart text-danger"></i>2</button>
+				            <button class="btn btn-sm"><i class="icon ion-ios-text text-primary"></i>7</button>
+				        </div>
+				        <div class="col-4 text-right">
+				            <button class="btn btn-sm mr-2"><i class="icon ion-ios-bookmark text-secondary"></i></button>
+				            <button class="btn btn-sm"><i class="icon ion-ios-share-alt text-secondary"></i></button>
+				        </div>
+				    </footer>
+				
+				</div>
+				<!-- post -->
+				
+				
+				<!-- post -->
+				<div class="photoPost">
+				    <header>
+				        <div class="user">
+				            <a href="social-profile.html">
+				                <img src="assets/img/sample/avatar6.jpg" alt="avatar" class="avatar">
+				                <strong>晴空</strong>
+				            </a>
+				        </div>
+				        <div class="right">
+				            <div class="lead">5天前</div>
+				        </div>
+				    </header>
+				    <div class="image">
+				        <a href="social-post.html">
+				            <img src="assets/img/sample/photo14.jpg" alt="photo" class="img-fluid"  style="width:50px;height:300px">
+				        </a>
+				    </div>
+				    <footer class="row">
+				        <div class="col-8">
+				            <button class="btn btn-sm mr-2"><i class="icon ion-ios-heart text-danger"></i>35</button>
+				            <button class="btn btn-sm"><i class="icon ion-ios-text text-primary"></i>210</button>
+				        </div>
+				        <div class="col-4 text-right">
+				            <button class="btn btn-sm mr-2"><i class="icon ion-ios-bookmark text-secondary"></i></button>
+				            <button class="btn btn-sm"><i class="icon ion-ios-share-alt text-secondary"></i></button>
+				        </div>
+				    </footer>
+				</div>
+				<!-- post -->
+			</div>
+				
+				
+			<!-- App Bottom Menu -->
+			<div class="appBottomMenu">
+			    <div class="item">
+			        <a href="homepage.html">
+			            <p>
+			                <i class="icon ion-ios-water"></i>
+			                <span>首页</span>
+			            </p>
+			        </a>
+			    </div>
+			    
+			    <div class="item active">
+			        <a href="social-home.html">
+			            <p>
+			                <i class="icon ion-ios-apps"></i>
+			                <span>动态</span>
+			            </p>
+			        </a>
+			    </div>
+			    <div class="item">
+					<a href="people-info.html">
+			        <!-- <a href="javascript:;" class="icon toggleSidebar"> -->
+			            <p>
+			                <i class="icon ion-ios-menu"></i>
+			                <span>我的</span>
+			            </p>
+			        </a>
+			    </div>
+			</div>
+			<!-- * App Bottom Menu -->
+			
+			
+			
+            <!-- post -->
+
+            <div id="post" class="divider mt-2 mb-2"></div>
+
+            
+
+            <div class="divider mt-2 mb-2"></div>
+
+            
+
+
+        </div>
+
+    </div>
+    <!-- appCapsule -->
+
+
+
+    <!-- Sidebar Menu -->
+    <div class="sidebarWrapper">
+        <div class="overlay toggleSidebar"></div>
+        <nav class="sidebar">
+            <div class="profilebox">
+                <img src="assets/img/sample/avatar.jpg" alt="avatar" class="avatar">
+                <h2 class="title">醒了很久还是很感动</h2>
+                <h5 class="lead">
+                    <i class="icon ion-ios-pin mr-1"></i>
+                    浙江省杭州市
+                </h5>
+                <div class="button">
+                    <a href="#">
+                        <i class="icon ion-ios-settings"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="sidebarGroup">
+                <ul class="sidebarMenu">
+                    <li>
+                        <a href="social-home.html">
+                            <i class="icon ion-ios-people"></i>
+                            动态
+                        </a>
+                    </li>
+                    <li>
+                        <a href="social-chat.html">
+                            <i class="icon ion-ios-chatboxes"></i>
+                            消息
+                        </a>
+                    </li>
+                    <li>
+                        <a href="activitiy-list.html">
+                            <i class="icon ion-ios-apps"></i>
+                            活动
+                        </a>
+                    </li>
+                    <li>
+                        <a href="people-info.html">
+                            <i class="icon ion-ios-book"></i>
+                            信息
+                        </a>
+                    </li>
+                    <li>
+                        <a href="page-login.html">
+                            <i class="icon ion-ios-lock"></i>
+                            登出
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="sidebarGroup">
+                <ul class="sidebarMenu">
+                    <li class="title">在线</li>
+                    <li>
+                        <a href="social-chat.html">
+                            <img src="assets/img/sample/avatar2.jpg" alt="avatar" class="avatar">
+                            胖大海
+                        </a>
+                    </li>
+                    <li>
+                        <a href="social-chat.html">
+                            <img src="assets/img/sample/avatar3.jpg" alt="avatar" class="avatar">
+                            佛山菩提
+                            <span class="badge badge-primary">2</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="social-chat.html">
+                            <img src="assets/img/sample/avatar4.jpg" alt="avatar" class="avatar">
+                            刘小佳
+                        </a>
+                    </li>
+                    <li>
+                        <a href="social-chat.html">
+                            <img src="assets/img/sample/avatar5.jpg" alt="avatar" class="avatar">
+                            张铁柱
+                        </a>
+                    </li>
+                    <li>
+                        <a href="social-chat.html">
+                            <img src="assets/img/sample/avatar6.jpg" alt="avatar" class="avatar">
+                            方言小李
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </nav>
+    </div>
+    <!-- * Sidebar Menu -->
+
+    <!-- ///////////// Js Files ////////////////////  -->
+    <!-- Jquery -->
+    <script src="assets/js/lib/jquery-3.4.1.min.js"></script>
+    <!-- Bootstrap-->
+    <script src="assets/js/lib/popper.min.js"></script>
+    <script src="assets/js/lib/bootstrap.min.js"></script>
+    <!-- Owl Carousel -->
+    <script src="assets/js/plugins/owl.carousel.min.js"></script>
+    <!-- Main Js File -->
+    <script src="assets/js/app.js"></script>
+<script>
+	// window.onload=function(){
+		
+	// alert("hhh");
+	// },
+	// function changeImage()
+	// {
+	// 	var obj=document.getElementById("image");
+	// 	obj.src="assets/img/sample/avatar2.jpg";
+	// }
+	// function click(index)
+	//  {
+	// 	 alert(index);
+		
+	// },
+	// function addDiv()
+	// {
+		
+	// 	var html='';
+	// 	for(var i=0;i<=5;i++)
+	// 	{
+			
+	// 		html+='<div class="photoPost">'+
+	// 		    '<header>'+
+	// 		         '<div class="user">'+
+	// 		           '<a href="social-profile.html">'+
+	// 		                '<img src="assets/img/sample/avatar3.jpg" alt="avatar" class="avatar">'+
+	// 		                '<strong>'+i+'</strong>'+
+	// 		            '</a>'+
+	// 		        '</div>'+
+	// 		        '<div class="right">'+
+	// 		            '<div class="lead">'+i+'</div>'+
+	// 		        '</div>'+
+	// 		    '</header>'+
+	// 		    '<div class="image">'+
+	// 		        '<a href="social-post.html">'+
+	// 		            '<img src="assets/img/sample/photo8.jpg" alt="photo" class="img-fluid" style="width:50px;height:300px">'+
+	// 		        '</a>'+
+	// 		    '</div>'+
+	// 		    '<footer class="row">'+
+	// 		        '<div class="col-8">'+
+	// 		            '<button class="btn btn-sm mr-2"><i class="icon ion-ios-heart text-danger"></i>52</button>'+
+	// 		            '<button class="btn btn-sm"><i class="icon ion-ios-text text-primary"></i>3</button>'+
+	// 		        '</div>'+
+	// 		        '<div class="col-4 text-right">'+
+	// 		            '<button class="btn btn-sm mr-2"><i class="icon ion-ios-bookmark text-secondary"></i></button>'+
+	// 		            '<button class="btn btn-sm"><i class="icon ion-ios-share-alt text-secondary"></i></button>'+
+	// 		        '</div>'+
+	// 		    '</footer>'+
+	// 		'</div>';
+	// 	}
+	// 	document.getElementById("div").innerHTML=html
+	// }
+	
+	
+	let container = document.createElement('div');
+	container.className = "photoPost";
+	
+	let head_1=document.createElement('header');
+	
+	let footer_1=document.createElement('footer')
+	
+	let div_1=document.createElement('div');
+	div_1.className="user";
+	
+	let div_2=document.createElement('div');
+	div_2.className="right";
+	
+	let div_3=document.createElement('div');
+	div_3.className="lead";
+	div_3.textContent="一分钟前";
+	
+	let a_1=document.createElement('a');
+	a_1.herf="text.html";
+	
+	let image_1=document.createElement('img');
+	image_1.src='assets/img/sample/avatar.jpg'
+	image_1.alt='img';
+	image_1.className='image';
+	
+	let strong_1=document.createElement('strong');
+	strong_1.textContent="东哥";
+	
+	let div_4=document.createElement('div');
+			 div_4.className="image";
+	
+	let a_2=document.createElement('a');
+	    a_2.herf="pinglun.html";
+		
+	let image_2=document.createElement('img');
+	image_2.src="assets/img/sample/product7.jpg";
+	image_2.alt="photo";
+	 
+	let div_5=document.createElement('div');
+	div_5.className="col_8";
+	
+	let div_6=document.createElement('div');
+	div_6.className="col_4";
+	
+	let button_1=document.createElement('button');
+	button_1.className="btn";
+	
+	let button_2=document.createElement('button');
+	button_2.className="btn";
+	
+	let button_3=document.createElement('button');
+	button_3.className="btn";
+	
+	let button_4=document.createElement('button');
+	button_4.className="btn";
+	
+	let i_1=document.createElement('i');
+	i_1.className="icon ion-ios-heart text-danger";
+	i_1.textContent="0";;
+	
+	let i_2=document.createElement('i');
+	i_2.className="icon ion-ios-text text-primary";
+	i_2.textContent="0";
+	
+	let 3_1=document.createElement('i');
+	i_3.className="icon ion-ios-bookmark text-secondary";
+	
+	let 4_1=document.createElement('i');
+	i_4.className="icon ion-ios-share-alt text-secondary";
+	
+	container.appendChild(head_1);
+	container.appendChild(footer_1);
+	container.appendChild(div_4);
+	head_1.appendChild(div_1);
+	head_1.appendChild(div_2);
+	div_1.appendChild(a_1);
+	div_2.appendChild(div_3);
+	a_1.appendChild(image_1);
+	a_1.appendChild(strong_1);
+	div_4.appendChild(a_2);
+	a_2.appendChild(image_2);
+	footer_1.appendChild(div_5);
+	footer_1.appendChild(div_6);
+	div_5.appendChild(button_1);
+	div_5.appendChild(button_2); 
+	div_6.appendChild(button_3);
+	div_6.appendChild(button_4);
+	button_1.appendChild(i_1);
+	button_2.appendChild(i_2);
+	button_3.appendChild(i_3);
+	button_4.appendChild(i_4);
+	
+	
+	let postlist = document.getElementById('post');
+	postlist.appendChild(container);
+	
+</script>
+</body>
+</html>
+					

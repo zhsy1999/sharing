@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bitter Mobile Template</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, width=device-width">
+    <meta name="description" content="Bitter Mobile Template">
+    <meta name="keywords" content="bootstrap, mobile template, cordova, phonegap, mobile, html, responsive" />
+</head>
+
+<body>
+
+    <!-- Page loading -->
+    <div class="loading">
+        <div class="spinner-grow"></div>
+    </div>
+    <!-- * Page loading -->
+
+    <!-- App Header -->
+    <div class="appHeader">
+        <div class="left">
+            <a href="javascript:;" class="icon goBack">
+                <i class="icon ion-ios-arrow-back"></i>
+            </a>
+        </div>
+        <div class="pageTitle">注册</div>
+        <div class="right">
+            <a href="people-login.html" class="link">登录</a>
+        </div>
+    </div>
+    <!-- searchBox -->
+    <div class="searchBox">
+        <form>
+            <span class="inputIcon">
+                <i class="icon ion-ios-search"></i>
+            </span>
+            <input type="text" class="form-control" id="searchInput" placeholder="Search...">
+            <a href="javascript:;" class="toggleSearchbox closeButton">
+                <i class="icon ion-ios-close-circle"></i>
+            </a>
+        </form>
+    </div>
+    <!-- * searchBox -->
+    <!-- * App Header -->
+
+    <!-- App Capsule -->
+    <div id="appCapsule" class="pb-2">
+
+        <div class="appContent pb-0">
+
+            <img src="assets/img/sample/draw-2.png" alt="img" class="img-fluid mt-3 mb-3">
+
+            <div class="sectionTitle text-center">
+                <div class="title">
+                    <h1>快来加入我们!</h1>
+                </div>
+                <div class="lead mb-3">注册新用户</div>
+            </div>
+
+            <form action="people-login.html">
+               
+                <div class="form-group">
+                    <input type="email" id="username"class="form-control" placeholder="用户名">
+                </div>
+                <div class="form-group">
+                    <input type="password"id="password" class="form-control" placeholder="密码">
+                </div>
+				<div class="form-group">
+				    <input type="text"id="phone" class="form-control" placeholder="电话号码">
+				</div>
+                <div>
+                    <button type="button"onclick="register()" class="btn btn-primary btn-lg btn-block">
+                        注册
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- appCapsule -->
+
+
+    <!-- ///////////// Js Files ////////////////////  -->
+    <!-- Jquery -->
+    <script src="assets/js/lib/jquery-3.4.1.min.js"></script>
+    <!-- Bootstrap-->
+    <script src="assets/js/lib/popper.min.js"></script>
+    <script src="assets/js/lib/bootstrap.min.js"></script>
+    <!-- Owl Carousel -->
+    <script src="assets/js/plugins/owl.carousel.min.js"></script>
+    <!-- Main Js File -->
+    <script src="assets/js/app.js"></script>
+<script>
+	function register()
+	{
+	    var phone=document.getElementById('phone').value;
+	   	var uid=document.getElementById('username').value;
+		var pwd=document.getElementById('password').value;
+		let res1 = async (phone,uid,pwd) => {
+				let fetchUrl = 'http://3499f57q62.zicp.vip:80/users/signup';
+				let fetchOption = {
+					method: 'POST',
+					headers: {
+									 'Accept': 'application/json',
+									 'Content-Type': 'application/x-www-form-urlencoded',
+					},
+				body:`&username=${uid}&password=${pwd}&phone=${phone}&userImg=12222&QQNum=1&WeChatNum=0&sex=1`,	
+				};
+			fetch(fetchUrl,fetchOption).then(promise =>promise.json()).then(data=>{
+									console.log(data);
+									if(data==1)
+									{
+										alert("注册成功，你可以去登录！")	
+											window.location.href="people-login.html";
+									}
+									else
+									{
+										alert("注册失败！")	
+									}
+									
+								});
+				
+				}
+					res1(phone.toString(),uid.toString(),pwd.toString())	  
+	}
+	
+</script>
+
+</body>
+
+</html>

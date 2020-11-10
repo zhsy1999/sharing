@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="utf-8" />
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <title>Bitter Mobile Template</title>
+	    <link rel="stylesheet" href="assets/css/style.css">
+	    <meta name="viewport" content="initial-scale=1, maximum-scale=1, width=device-width">
+	    <meta name="description" content="Bitter Mobile Template">
+	    <meta name="keywords" content="bootstrap, mobile template, cordova, phonegap, mobile, html, responsive" />
+	</head>
+	
+	<body>
+		
+		
+	
+	  <div class="works-wrap"> 
+	   <div class="figure-box" id="figure_box"></div> 
+	   <div class="add-btn"> 
+	   <input type="file" id="imgUploadBtn" /> 
+	   <a href="javascript:void(0);" rel="external nofollow" ></a></div> 
+	   </div> 
+	
+	  </div> 
+	    <!-- App Header -->
+	    <div class="appHeader">
+	        <div class="left">
+	            <a href="homepage.html"  class="icon goBack">
+	                <i class="icon ion-ios-arrow-back"></i>
+	            </a>
+	        </div>
+	        
+	        <div class="right">
+	            
+	               <div onclick="commic()"   style="background-color: limegreen;width: 50px;height: 30px;line-height:30px;margin-right: 20px;text-align: center;">
+					   <span style="color: white;font-weight:600;">发表</span>
+				   </div>
+	            
+	        </div>
+	    </div>
+	
+		        <div class="appContent" id="container" style="margin-top: 60px;">	
+		            <form id="comment">
+						<div class="divider mt-3 mb-3"></div>
+		                <div class="form-group">
+		                    <textarea class="form-control" rows="4" placeholder="你此刻的想法..."></textarea>
+		                </div>				 
+		            </form>	
+		        </div>
+				</div> 
+		                 <div class="works-wrap"style="margin-left: 30%!important;">
+						 <div class="figure-box" id="figure_box"></div> 
+						 <div class="add-btn"> 
+						 <input type="file" id="imgUploadBtn" /> 
+						 <a href="javascript:void(0);" rel="external nofollow" ></a></div> 
+						 </div>
+						 <br/>
+				         <hr/>
+	</body>
+	
+	<script>
+	function commic()
+	{
+		localStorage.setItem("commic","commic");
+		window.location.href='people-info.html';
+	}
+	</script>
+</html>

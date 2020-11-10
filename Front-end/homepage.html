@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bitter Mobile Template</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, width=device-width">
+    <meta name="description" content="Bitter Mobile Template">
+    <meta name="keywords" content="bootstrap, mobile template, cordova, phonegap, mobile, html, responsive" />
+</head>
+
+<body>
+
+    <!-- Page loading -->
+    <div class="loading">
+        <div class="spinner-grow"></div>
+    </div>
+    <!-- * Page loading -->
+
+    <!-- App Header -->
+    <div class="appHeader">
+        <div class="left">
+            <a href="javascript:;" class="icon toggleSidebar">
+                <i class="icon ion-ios-menu"></i>
+            </a>
+        </div>
+       
+		<div class="pageTitle">首页</div>
+		
+		<div class="right" onclick="gogo()">
+			
+		     <i class="icon ion-ios-add" font-weight:bold></i>
+			
+		</div>
+
+    </div>
+    
+    <div id="appCapsule">
+
+        <div class="appContent">
+
+            <!-- Card Overlay Carousel -->
+            <div id="test111" class="cardOverlayCarousel owl-carousel mt-2 mb-4">
+				<!-- item -->
+				<div class="item">
+				    <a href="detail.html" class="card card-overlay text-white">
+				        <img src="assets/img/sample/photo11.jpg" class="card-img img-fluid" alt="image" style="width:50px;height:300px">
+				        <div class="card-img-overlay">
+				            <div class="header row">
+				                <div class="col-8">情感</div>
+				                <div class="col-4 text-right">
+				                    <i class="icon ion-ios-heart"></i> 12K
+				                </div>
+				            </div>
+				            <div class="content">
+				                <h1>天上没有月亮，人间灯火如豆。</h1>
+				                <footer>
+				                    <div class="author">
+				                        <img src="assets/img/sample/avatar5.jpg" alt="avatar">
+				                        Weichan
+				                    </div>
+				                    <div class="date">
+				                        2小时前
+				                    </div>
+				                </footer>
+				            </div>
+				        </div>
+				    </a>
+				</div>
+				<!-- * item -->
+                <!-- item -->
+                <div id='ggg' class="item">
+                    <a href="video-play.html" class="card card-overlay text-white">
+                        <img src="assets/img/sample/photo8.jpg" class="card-img img-fluid" alt="这是一张美食图片" style="width:50px;height:300px">
+                        <div class="card-img-overlay">
+                            <div class="header row">
+                                <div class="col-8">美食</div>
+                                <div class="col-4 text-right">
+                                    <i class="icon ion-ios-heart"></i> 520
+                                </div>
+                            </div>
+                            <div class="content">
+                                <h1>出来混，总是要胖的。</h1>
+                                <footer>
+                                    <div class="author">
+                                        <img src="assets/img/sample/avatar3.jpg" alt="avatar" >
+                                        胖子张
+                                    </div>
+                                    <div class="date">
+                                        1小时前
+                                    </div>
+                                </footer>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- * item -->
+                <!-- item -->
+                <div class="item">
+                    <a href="video-play.html" class="card card-overlay text-white">
+                        <img src="assets/img/sample/photo5.jpg" class="card-img img-fluid" alt="image" style="width:50px;height:300px">
+                        <div class="card-img-overlay">
+                            <div class="header row">
+                                <div class="col-8">运动</div>
+                                <div class="col-4 text-right">
+                                    <i class="icon ion-ios-heart"></i> 12K
+                                </div>
+                            </div>
+                            <div class="content">
+                                <h1>运动没有文案，只有流汗</h1>
+                                <footer>
+                                    <div class="author">
+                                        <img src="assets/img/sample/avatar.jpg" alt="avatar">
+                                        Doveman
+                                    </div>
+                                    <div class="date">
+                                        2小时前
+                                    </div>
+                                </footer>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- * item -->
+              
+                <!-- item -->
+                <div class="item">
+                    <a href="video-play.html" class="card card-overlay text-white">
+                        <img src="assets/img/sample/photo10.jpg" class="card-img img-fluid" alt="image" style="width:50px;height:300px">
+                        <div class="card-img-overlay">
+                            <div class="header row">
+                                <div class="col-8">家乡</div>
+                                <div class="col-4 text-right">
+                                    <i class="icon ion-ios-heart"></i> 12K
+                                </div>
+                            </div>
+                            <div class="content">
+                                <h1>永宁县里盼永宁</h1>
+                                <footer>
+                                    <div class="author">
+                                        <img src="assets/img/sample/avatar6.jpg" alt="avatar">
+                                        东哥
+                                    </div>
+                                    <div class="date">
+                                        2小时前
+                                    </div>
+                                </footer>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- * item -->
+            </div>
+			<hr style="height: 3px;borde: 5px solid red/;"/>
+            <!-- * Card Overlay Carousel -->
+
+            <!-- Post Carousel -->
+            <div class="sectionTitle mb-2">
+                
+                <div class="title">
+                    <h1>专题</h1>
+                </div>
+            </div>
+
+            <div id = "zhuanti" class="postCarousel owl-carousel">
+                <div class="item">
+                    <a href="activity-info.html">
+                        <img src="assets/img/sample/photo13.jpg" alt="image" class="image" style="width:180px;  height:175px;">
+                        <h2 class="title">来看看这些超级适合拍照的地方吧！</h2>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="activity-info.html">
+                        <img src="assets/img/sample/photo2.jpg" alt="image" class="image" style="width:180px;  height:175px;">
+                        <h2 class="title">礼物送什么？看这个就够了!</h2>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="activity-info.html">
+                        <img src="assets/img/sample/photo3.jpg" alt="image" class="image" style="width:180px;  height:175px;">
+                        <h2 class="title">你一定要知道的家常菜的做法！</h2>
+                    </a>
+                </div>
+                
+                
+            </div>
+            <!-- * Post Carousel -->
+
+
+            <div class="divider mt-2 mb-2"></div>
+
+
+            
+
+         
+
+            <div class="sectionTitle mb-2">
+               
+                <div class="title">
+                    <h1>每周推荐</h1>
+                </div>
+                <div class="lead">
+                    好好生活慢慢相遇！
+                </div>
+            </div>
+
+            <!-- item list -->
+            <div id = "itemlist" class="itemList">
+				<a href="video-play.html">
+					<div class="item">
+						<div class="image">
+							<img src="assets/img/sample/photo14.jpg" alt="image" style="width:90px;  height:100px;">
+						</div>
+						<div class="text">
+							<h4 class="title">WeiChan</h4>
+							<div class="text-muted">打卡！</div>
+							<h2 class="text-muted">12.7万观看.04-15</h2>
+						</div>
+					</div>
+					<br />
+				</a>
+				<a href="video-play.html">
+					<div class="item">
+						<div class="image">
+							<img src="assets/img/sample/photo13.jpg" alt="image" style="width:90px;  height:100px;" >
+						</div>
+						<div class="text">
+							<h4 class="title">晴空</h4>
+							<div class="text-muted">杭州之行vlog</div>
+							<h2 class="text-muted">9.7万观看.04-15</h2>
+						</div>
+					</div>
+					<br />
+				</a>	
+				<a href="video-play.html">
+					<div class="item">
+						<div class="image">
+							<img src="assets/img/sample/photo4.jpg" alt="image" style="width:90px;  height:100px;">
+						</div>
+						<div class="text">
+							<h4 class="title">带着笑或是很沉默</h4>
+							<div class="text-muted">吃在我胃，胖在你身......</div>
+							<h2 class="text-muted">9.4万观看.04-15</h2>
+						</div>
+					</div>
+	
+				</a>
+            </div>
+           
+
+
+            <!-- * Iconed Boxes -->
+
+<!--            <div class="divider mt-2 mb-4"></div>
+
+            <div class="sectionTitle mb-1">
+                <div class="text-muted">本周热点人物</div>
+                <div class="title">
+                    <h1>排行</h1>
+                    <a href="blog-category.html">查看所有</a>
+                </div>
+            </div> -->
+
+            <!-- listview -->
+           
+        </div>
+
+		<!-- 具体待修改 -->
+        <!-- app Footer -->
+        <footer class="appFooter">
+            <div class="heading">Copyright © Bitter 2019. All Rights Reserved.</div>
+            <p>
+                Modern, simple and elegant design style for cordova, phonegap, webview or pwa apps.
+            </p>
+            <!-- facebook -->
+            <a href="#" class="btn btn-facebook btn-icon mr-1">
+                <i class="icon ion-logo-facebook"></i>
+            </a>
+            <!-- twitter -->
+            <a href="#" class="btn btn-twitter btn-icon mr-1">
+                <i class="icon ion-logo-twitter"></i>
+            </a>
+            <!-- instagram -->
+            <a href="#" class="btn btn-instagram btn-icon mr-1">
+                <i class="icon ion-logo-instagram"></i>
+            </a>
+            <!-- linkedin -->
+            <a href="#" class="btn btn-linkedin btn-icon mr-1">
+                <i class="icon ion-logo-linkedin"></i>
+            </a>
+            <!-- whatsapp -->
+            <a href="#" class="btn btn-whatsapp btn-icon mr-1">
+                <i class="icon ion-logo-whatsapp"></i>
+            </a>
+        </footer>
+        <!-- * app Footer -->
+    </div>
+    <!-- * appCapsule -->
+
+    <!-- App Bottom Menu -->
+    <div class="appBottomMenu">
+        <div class="item active">
+            <a href="homepage.html">
+                <p>
+                    <i class="icon ion-ios-water"></i>
+                    <span>首页</span>
+                </p>
+            </a>
+        </div>
+      
+        <div class="item mova">
+			
+            <a href="social-home.html">
+                <p>
+                    <i class="icon ion-ios-apps"></i>
+                    <span>动态</span>
+                </p>
+            </a>
+        </div>
+		
+        <div class="item myself">
+            <a href="people-info.html">
+                <p>
+                    <i class="icon ion-ios-person"></i>
+                    <span>我的</span>
+                </p>
+            </a>
+        </div>
+    </div>
+    <!-- * App Bottom Menu -->
+
+    <!-- Sidebar Menu -->
+    <div class="sidebarWrapper">
+        <div class="overlay toggleSidebar"></div>
+        <nav class="sidebar">
+            <div class="profilebox">
+                <img src="assets/img/sample/avatar.jpg" alt="avatar" class="avatar">
+                <h2 class="title">   A Fine Day</h2>
+                <h5 class="lead">
+                    <i class="icon ion-ios-pin mr-1"></i>
+                    浙江省杭州市
+                </h5>
+                <div class="button">
+                    <a href="#">
+                        <i class="icon ion-ios-settings"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="sidebarGroup">
+                <ul class="sidebarMenu">
+                    <li>
+                        <a href="social-home.html">
+                            <i class="icon ion-ios-people"></i>
+                            动态
+                        </a>
+                    </li>
+                    <li>
+                        <a href="social-chat.html">
+                            <i class="icon ion-ios-chatboxes"></i>
+                            消息
+                        </a>
+                    </li>
+                    <li>
+                        <a href="activitiy-list.html">
+                            <i class="icon ion-ios-apps"></i>
+                            活动
+                        </a>
+                    </li>
+                    <li>
+                        <a href="people-info.html">
+                            <i class="icon ion-ios-book"></i>
+                            信息
+                        </a>
+                    </li>
+                    <li>
+                        <a href="page-login.html">
+                            <i class="icon ion-ios-lock"></i>
+                            登出
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="sidebarGroup">
+                <ul class="sidebarMenu">
+                    <li class="title">在线</li>
+                    <li>
+                        <a href="#">
+                            <img src="assets/img/sample/avatar2.jpg" alt="avatar" class="avatar">
+                            晴空
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="assets/img/sample/avatar3.jpg" alt="avatar" class="avatar">
+                            春夏
+                            <span class="badge badge-primary">2</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="assets/img/sample/avatar4.jpg" alt="avatar" class="avatar">
+                            带着笑或是很
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="assets/img/sample/avatar5.jpg" alt="avatar" class="avatar">
+                            non
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="assets/img/sample/avatar6.jpg" alt="avatar" class="avatar">
+                            张胖子
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </nav>
+    </div>
+    <!-- * Sidebar Menu -->
+
+    <!-- ///////////// Js Files ////////////////////  -->
+    <!-- Jquery -->
+    <script src="assets/js/lib/jquery-3.4.1.min.js"></script>
+    <!-- Bootstrap-->
+    <script src="assets/js/lib/popper.min.js"></script>
+    <script src="assets/js/lib/bootstrap.min.js"></script>
+    <!-- Owl Carousel -->
+    <script src="assets/js/plugins/owl.carousel.min.js"></script>
+    <!-- Main Js File -->
+    <script src="assets/js/app.js"></script>
+
+	
+    <script>
+		
+		function gogo(){
+			
+			
+			window.location.href="test.html";
+		}
+		
+		function newest(){
+		let container = document.createElement('div');
+		container.className = 'col-6';
+		
+		let a = document.createElement('a');
+		a.href = 'video-play.html';
+		a.className = 'postItem';
+		
+		let div_1 = document.createElement('div');
+		div_1.className = 'imageWrapper';
+		
+		let img_1 = document.createElement('img');
+		img_1.src = 'assets/img/sample/photo11.jpg';
+		img_1.alt="image";
+		img_1.className = 'image';
+		
+		let div_1_1 = document.createElement('div');
+		div_1_1.className = 'badge badge-warning';
+		div_1_1.textContent = '东北话';
+		
+		let h2 = document.createElement('title');
+		h2.textContent = '瞅你咋地？我的东北话学习之路';
+		
+		let postlist = document.getElementById('postlist');
+		postlist.appendChild(container);
+		
+		container.appendChild(a);
+		a.appendChild(div_1);
+		div_1.appendChild(img_1);
+		div_1.appendChild(div_1_1);
+		
+		a.appendChild(h2);
+		
+		}
+		
+		
+		 
+		 function lunbo2(){
+			 let lunbo_2 = document.createElement('div');
+			 lunbo_2.className = 'item';
+			 
+			 let a_2 = document.createElement('a');
+			 a_2.href = 'activity-info.html';
+			 
+			 let img_2 = document.createElement('img');
+			 img_2.src = "assets/img/sample/photo13.jpg";
+			 img_2.alt = "image";
+			 img_2.className = 'image';
+			 
+			 let h_2 = document.createElement('h2');
+			 h_2.className = 'title';
+			 h_2.textContent = '您能发现这个场景中的差异吗';
+			 
+			 let zhuanti = document.getElementById('zhuanti');
+			 zhuanti.appendChild(lunbo_2);
+			 
+			 lunbo2.appendChild(a_2);
+			 a_2.appendChild(img_2);
+			 a_2.appendChild(h_2);
+		 }
+		 
+		 // <div class="itemList">
+		 // 	<a href="video-play.html">
+		 // 		<div class="item">
+		 // 			<div class="image">
+		 // 				<img src="assets/img/sample/photo14.jpg" alt="image">
+		 // 			</div>
+		 // 			<div class="text">
+		 // 				<h4 class="title">陕西李</h4>
+		 // 				<div class="text-muted">你那膝盖磕马路牙子上了.</div>
+		 // 				<h2 class="text-muted">12.7万观看.04-15</h2>
+		 // 			</div>
+		 // 		</div>
+		 // 	</a>
+		 function zonglan3(){
+			 let a_3 = document.createElement('a');
+			 a_3.href = "video-play.html";
+			 
+			 let div_31 = document.createElement('div');
+			 div_31.className = 'item';
+			 
+			 let img_3 = document.createElement('img');
+			 img_3.src = 'assets/img/sample/photo14.jpg';
+			 img_3.alt = 'image';
+			 img_3.className = 'image';
+			 img_3.style.width = '100px';
+			 
+			 let div_3 = document.createElement('div');
+			 div_3.className = 'text';
+			 
+			 let h_31 = document.createElement('h4');
+			 h_31.className = 'title';
+			 h_31.textContent = '陕西李';
+			 
+			 let div_3_1 = document.createElement('div');
+			 div_3_1.className = 'text-muted';
+			 div_3_1.textContent = '你那膝盖磕马路牙子上了.';
+			 
+			 let h_32 = document.createElement('h2');
+			 h_32.className = 'text-muted';
+			 h_32.textContent = '12.7万观看.04-15';
+			 
+			 let zonglan = document.getElementById('itemlist');
+			 zonglan.appendChild(a_3);
+			 
+			 a_3.appendChild(div_31);
+			 div_31.appendChild(img_3);
+			 div_31.appendChild(div_3);
+			 div_3.appendChild(h_31);
+			 div_3.appendChild(div_3_1);
+			 div_3.appendChild(h_32);
+		 }
+
+		 
+	</script>
+
+</body>
+
+</html>
